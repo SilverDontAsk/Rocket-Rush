@@ -1,4 +1,5 @@
 extends Area2D
+signal hit
 
 # Define the size of the grid. This example uses a 64x64 grid.
 var grid_size: Vector2 = Vector2(64, 64)
@@ -40,3 +41,9 @@ func move_towards_target(delta: float) -> void:
 	if position != target_position:
 		# Move towards the target position at the specified speed
 		position = position.move_toward(target_position, move_speed * grid_size.x * delta)
+
+
+func _on_body_entered(body):
+	hide()
+	hit.emit()
+	$CollisionShape2D2.set_deferred("disabled", true)
