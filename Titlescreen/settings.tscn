@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ujw1ti8rjt3d"]
+
+[ext_resource type="Texture2D" uid="uid://bqogp2lip1mdy" path="res://Game/Titlescreen/Captura de pantalla 2024-10-11 213545.png" id="1_1gcws"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Settings" type="Sprite2D" parent="."]
+position = Vector2(289, 160)
+scale = Vector2(0.501115, 0.495091)
+
+[node name="CapturaDePantalla2024-10-11213545" type="Sprite2D" parent="."]
+position = Vector2(290, 159)
+scale = Vector2(0.43858, 0.441432)
+texture = ExtResource("1_1gcws")
+region_filter_clip_enabled = true
