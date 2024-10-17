@@ -1,19 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://ujw1ti8rjt3d"]
+[gd_scene load_steps=3 format=3 uid="uid://ujw1ti8rjt3d"]
 
-[ext_resource type="Texture2D" uid="uid://bqogp2lip1mdy" path="res://Game/Titlescreen/Captura de pantalla 2024-10-11 213545.png" id="1_1gcws"]
+[ext_resource type="Texture2D" uid="uid://bqogp2lip1mdy" path="res://Titlescreen/Captura de pantalla 2024-10-11 213545.png" id="1_1gcws"]
+[ext_resource type="Script" path="res://Titlescreen/settings.gd" id="1_4ne2v"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 2.0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_4ne2v")
 
 [node name="Settings" type="Sprite2D" parent="."]
 position = Vector2(289, 160)
 scale = Vector2(0.501115, 0.495091)
 
 [node name="CapturaDePantalla2024-10-11213545" type="Sprite2D" parent="."]
-position = Vector2(290, 159)
-scale = Vector2(0.43858, 0.441432)
+position = Vector2(290.438, 164.937)
+scale = Vector2(0.439425, 0.4416)
 texture = ExtResource("1_1gcws")
 region_filter_clip_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_left = 46.0
+offset_top = 262.0
+offset_right = 91.0
+offset_bottom = 293.0
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

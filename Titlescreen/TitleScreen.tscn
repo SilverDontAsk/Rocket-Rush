@@ -12,7 +12,6 @@
 [sub_resource type="GDScript" id="GDScript_6qlj3"]
 script/source = "extends Control
 
-
 func _on_start_pressed() -> void:
 	pass # Replace with function body.
 
@@ -24,8 +23,7 @@ func _on_highscores_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://Game/Titlescreen/settings.tscn\")
-
+	get_tree().change_scene_to_file(\"res://Titlescreen/settings.tscn\")
 
 
 func _on_exit_pressed() -> void:
@@ -180,9 +178,9 @@ position = Vector2(173, 117)
 scale = Vector2(0.24435, 0.185841)
 texture = ExtResource("8_vp2dg")
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Highscores" to="." method="_on_highscores_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
