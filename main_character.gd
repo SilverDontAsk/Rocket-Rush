@@ -1,4 +1,5 @@
 extends Area2D
+signal hit
 
 @onready var animations : AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_up : RayCast2D = $Raycast/up
@@ -50,3 +51,9 @@ func move_by_tween(next_position : Vector2):
 	
 func end_of_tween():
 	animations.play("Spaceship_flying")
+
+
+func _on_body_entered(body: Node2D) -> void:
+	hide()
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)

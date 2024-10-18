@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dptc1gl61di6b"]
+[gd_scene load_steps=5 format=3 uid="uid://dptc1gl61di6b"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_1mmhq"]
 [ext_resource type="PackedScene" uid="uid://dgm8lj3k2w6ds" path="res://main_character.tscn" id="1_vvrbq"]
 [ext_resource type="PackedScene" uid="uid://csxp82mm4qdbl" path="res://obs.tscn" id="2_65nqd"]
 
@@ -10,6 +11,8 @@ _data = {
 point_count = 2
 
 [node name="Game" type="Node"]
+script = ExtResource("1_1mmhq")
+obs_scene = ExtResource("2_65nqd")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_vvrbq")]
 position = Vector2(322, 217)
@@ -17,5 +20,18 @@ position = Vector2(322, 217)
 [node name="Obs" parent="." instance=ExtResource("2_65nqd")]
 position = Vector2(322, 56)
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="ObsPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_befl4")
+
+[node name="ObsSpawnLoc" type="PathFollow2D" parent="ObsPath"]
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[connection signal="hit" from="MainCharacter" to="." method="_on_main_character_hit"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
