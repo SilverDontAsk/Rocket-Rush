@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oj3w"]
-radius = 43.0465
+radius = 40.0
 
 [node name="Obs" type="RigidBody2D"]
 collision_mask = 0
@@ -28,6 +28,7 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ii1py")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+skew = 0.345575
 shape = SubResource("CircleShape2D_0oj3w")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
