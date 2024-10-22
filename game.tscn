@@ -12,13 +12,13 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5nlg"]
-size = Vector2(24, 648)
+size = Vector2(24, 680)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqtb5"]
-size = Vector2(1200, 12)
+size = Vector2(1200, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70hpp"]
-size = Vector2(24, 648)
+size = Vector2(24, 686)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bw68y"]
 size = Vector2(1199, 20)
@@ -51,27 +51,27 @@ position = Vector2(576, 328)
 scale = Vector2(0.898203, 0.905459)
 texture = ExtResource("4_lvjwa")
 
-[node name="LeftWall" type="StaticBody2D" parent="."]
+[node name="LeftWall" type="StaticBody2D" parent="." groups=["Border"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-12, 324)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" groups=["Border"]]
+position = Vector2(-12, 326)
 shape = SubResource("RectangleShape2D_d5nlg")
 
-[node name="RightWall" type="StaticBody2D" parent="."]
+[node name="TopWall" type="StaticBody2D" parent="." groups=["Border"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(576, -6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" groups=["Border"]]
+position = Vector2(576, -12)
 shape = SubResource("RectangleShape2D_vqtb5")
 
-[node name="TopWall" type="StaticBody2D" parent="."]
+[node name="RightWall" type="StaticBody2D" parent="." groups=["Border"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-position = Vector2(1164, 324)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" groups=["Border"]]
+position = Vector2(1164, 323)
 shape = SubResource("RectangleShape2D_70hpp")
 
-[node name="BottomWall" type="StaticBody2D" parent="."]
+[node name="BottomWall" type="StaticBody2D" parent="." groups=["Border"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" groups=["Border"]]
 position = Vector2(575.5, 658)
 shape = SubResource("RectangleShape2D_bw68y")
 

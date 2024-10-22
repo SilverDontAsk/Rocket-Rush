@@ -54,6 +54,9 @@ func end_of_tween():
 
 
 func _on_body_entered(body: Node2D) -> void:
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	if body.is_in_group("obstacle"):
+		hide()
+		hit.emit()
+		$CollisionShape2D.set_deferred("disabled", true)
+	elif body.is_in_group("Border"):
+		pass
