@@ -6,7 +6,6 @@ var score
 func _ready() -> void:
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -18,6 +17,7 @@ func _on_main_character_hit() -> void:
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	get_tree().change_scene_to_file("res://Titlescreen/TitleScreen.tscn")
 
 func new_game():
 	score = 0
