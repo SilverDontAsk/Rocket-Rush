@@ -27,9 +27,11 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("obstacle"):
-		hide()
-		hit.emit()
-		$CollisionShape2D.set_deferred("disabled", true)
-	elif body.is_in_group("Border"):
-		pass
+	hide()
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
+		
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false

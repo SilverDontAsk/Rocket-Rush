@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dgm8lj3k2w6ds"]
 
-[ext_resource type="Script" path="res://main_character.gd" id="1_dgu0o"]
+[ext_resource type="Script" path="res://Player.gd" id="1_dgu0o"]
 [ext_resource type="Texture2D" uid="uid://dgh7vxymvgn6w" path="res://rockets/keyframes/__rocket_blue_flame_purple_000.png" id="1_spfm8"]
 [ext_resource type="Texture2D" uid="uid://dq7er0ea6hcll" path="res://rockets/keyframes/__rocket_blue_flame_purple_001.png" id="2_mva7d"]
 [ext_resource type="Texture2D" uid="uid://bjs0vp5c8abau" path="res://rockets/keyframes/__rocket_blue_flame_purple_002.png" id="3_ukb23"]
@@ -62,7 +62,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MainCharacter" type="Area2D"]
+[node name="Player" type="Area2D"]
 script = ExtResource("1_dgu0o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -74,19 +74,5 @@ position = Vector2(0, 1)
 scale = Vector2(0.101449, 0.0699458)
 sprite_frames = SubResource("SpriteFrames_dnnut")
 animation = &"Spaceship_flying"
-
-[node name="Raycast" type="Node2D" parent="."]
-
-[node name="up" type="RayCast2D" parent="Raycast"]
-target_position = Vector2(0, -48)
-
-[node name="left" type="RayCast2D" parent="Raycast"]
-target_position = Vector2(-48, 0)
-
-[node name="right" type="RayCast2D" parent="Raycast"]
-target_position = Vector2(48, 0)
-
-[node name="down" type="RayCast2D" parent="Raycast"]
-target_position = Vector2(0, 48)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

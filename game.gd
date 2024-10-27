@@ -3,16 +3,8 @@ extends Node
 var score
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_main_character_hit() -> void:
-	pass # Replace with function body.
+func _ready():
+	new_game()
 
 func game_over():
 	$ScoreTimer.stop()
@@ -21,13 +13,12 @@ func game_over():
 
 func new_game():
 	score = 0
-	$MainCharacter.start($StartPosition.position)
+	$Player.start($StartPosition.position)
 	$StartTimer.start()
 
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()
 	$ScoreTimer.start()
-
 
 func _on_mob_timer_timeout() -> void:
 	var obs = obs_scene.instantiate()
@@ -39,6 +30,7 @@ func _on_mob_timer_timeout() -> void:
 	obs.rotation = direction
 	
 	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	obs.linear_velocity = velocity.rotated(direction)
 	
 	add_child(obs)
 

@@ -181,6 +181,6 @@ texture = ExtResource("8_vp2dg")
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Highscores" to="." method="_on_highscores_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
