@@ -1,0 +1,25 @@
+Progress:
+
+In a scale of 1 to 10, our progress right now is a 8 out of 10.
+We have made significant strides in our project, particularly in refining the single-player mode and establishing the foundation for the versus mode.
+
+Explanation of progress assessment:
+
+We focused primarily on enhancing the single-player experience. We successfully implemented the core gameplay mechanics, including player movement, enemy spawning, and a scoring system.
+We also completed the user interface elements, allowing players to track their score and damage effectively.
+
+In addition, we created a settings menu where players can adjust game options, which added an extra layer of polish to the game.
+The game is now more enjoyable and engaging, thanks to these improvements.
+
+Completed parts of the project as planned:
+
+1 - Fully functional single-player mode with scoring and damage tracking.
+2 - User interface implemented, displaying current score and damage.
+3 -  Settings menu created for player customization.
+4 - Initial testing of gameplay mechanics and balancing.
+
+Incomplete aspects of the project:
+
+1 - Versus mode is still under development and needs to be completed to ensure a balanced multiplayer experience.
+2 - Final testing and debugging of the single-player mode and UI.
+3 - Additional polish and visual enhancements to the game assets.
