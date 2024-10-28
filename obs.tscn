@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csxp82mm4qdbl"]
 
 [ext_resource type="Script" path="res://obs.gd" id="1_1a3k8"]
-[ext_resource type="Texture2D" uid="uid://ckgj6fgloemb" path="res://CrashEffect/Asteroids/Crystalline/Small_Asteroid_Crystalline_1.png" id="1_38wx6"]
+[ext_resource type="Texture2D" uid="uid://ckgj6fgloemb" path="res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_1.png" id="1_38wx6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ii1py"]
 animations = [{

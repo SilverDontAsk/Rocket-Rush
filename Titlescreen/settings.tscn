@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ujw1ti8rjt3d"]
 
-[ext_resource type="Texture2D" uid="uid://bqogp2lip1mdy" path="res://Titlescreen/Captura de pantalla 2024-10-11 213545.png" id="1_1gcws"]
+[ext_resource type="Texture2D" uid="uid://bqogp2lip1mdy" path="res://Main/Assets/Captura de pantalla 2024-10-11 213545.png" id="1_1gcws"]
 [ext_resource type="Script" path="res://Titlescreen/settings.gd" id="1_4ne2v"]
 
 [node name="Settings" type="Control"]

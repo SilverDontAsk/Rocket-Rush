@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game.gd" id="1_1mmhq"]
 [ext_resource type="PackedScene" uid="uid://dgm8lj3k2w6ds" path="res://Player.tscn" id="1_vvrbq"]
 [ext_resource type="PackedScene" uid="uid://csxp82mm4qdbl" path="res://obs.tscn" id="2_65nqd"]
-[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Titlescreen/fondo espacial.png" id="4_lvjwa"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="4_lvjwa"]
 [ext_resource type="PackedScene" uid="uid://7rgk81h50l1f" path="res://hud.tscn" id="5_q6ijv"]
 
 [sub_resource type="Curve2D" id="Curve2D_befl4"]

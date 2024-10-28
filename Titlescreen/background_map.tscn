@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsbynhojrbk27"]
 
-[ext_resource type="Texture2D" uid="uid://dtjs8vr6mw5nu" path="res://Game/RocketRushAssets/rockets/Background_space_original.png" id="1_cgu6u"]
+[ext_resource type="Texture2D" uid="uid://dtjs8vr6mw5nu" path="res://Main/Assets/Background_space_original.png" id="1_cgu6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tio1r"]
 texture = ExtResource("1_cgu6u")

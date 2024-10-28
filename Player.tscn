@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://dgm8lj3k2w6ds"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dgu0o"]
-[ext_resource type="Texture2D" uid="uid://dgh7vxymvgn6w" path="res://rockets/keyframes/__rocket_blue_flame_purple_000.png" id="1_spfm8"]
-[ext_resource type="Texture2D" uid="uid://dq7er0ea6hcll" path="res://rockets/keyframes/__rocket_blue_flame_purple_001.png" id="2_mva7d"]
-[ext_resource type="Texture2D" uid="uid://bjs0vp5c8abau" path="res://rockets/keyframes/__rocket_blue_flame_purple_002.png" id="3_ukb23"]
-[ext_resource type="Texture2D" uid="uid://b2mbh6rpeaje5" path="res://rockets/keyframes/__rocket_blue_flame_purple_006.png" id="4_l6jgc"]
-[ext_resource type="Texture2D" uid="uid://dmkcwpjqynuqa" path="res://rockets/keyframes/__rocket_blue_flame_purple_008.png" id="5_pvsuj"]
-[ext_resource type="Texture2D" uid="uid://bwvas3cn2aclf" path="res://rockets/keyframes/__rocket_blue_flame_purple_009.png" id="6_dendm"]
+[ext_resource type="Texture2D" uid="uid://dgh7vxymvgn6w" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_000.png" id="1_spfm8"]
+[ext_resource type="Texture2D" uid="uid://dq7er0ea6hcll" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_001.png" id="2_mva7d"]
+[ext_resource type="Texture2D" uid="uid://bjs0vp5c8abau" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_002.png" id="3_ukb23"]
+[ext_resource type="Texture2D" uid="uid://b2mbh6rpeaje5" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_006.png" id="4_l6jgc"]
+[ext_resource type="Texture2D" uid="uid://dmkcwpjqynuqa" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_008.png" id="5_pvsuj"]
+[ext_resource type="Texture2D" uid="uid://bwvas3cn2aclf" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_009.png" id="6_dendm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxav8"]
 radius = 14.0
