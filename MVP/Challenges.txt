@@ -1,0 +1,13 @@
+What progress we faced off...
+
+As a team, we encountered several challenges while working on this project.
+The first of these was communication within the team—deciding who would handle what aspects of the project and how to maintain effective communication while working.
+
+After overcoming that obstacle, we faced Godot, an engine developed for creating video games that offers a wide variety of techniques to enable us to accomplish everything in a single app.
+The challenge was to learn how to use it effectively within the timeframe we had to develop the project, especially since none of us had prior experience with it.
+
+In the game creation process, I found that the most difficult part was implementing the scoring system within the game.
+Ensuring that the game saved the highest score was quite challenging, but with much effort and patience, we overcame this obstacle.
+
+We still have one final challenge ahead of us: completing the versus mode to make it as playable as the single-player mode.
+However, we are close to the finish line, and soon everyone will be able to enjoy the game just like we do.
