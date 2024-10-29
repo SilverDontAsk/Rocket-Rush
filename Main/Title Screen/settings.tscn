@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://ujw1ti8rjt3d"]
+
+[ext_resource type="Script" path="res://Main/Title Screen/settings.gd" id="1_8mx2u"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="1_dsyo6"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="2_2r52g"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8mx2u")
+
+[node name="Settings" type="Sprite2D" parent="."]
+position = Vector2(578, 327.5)
+scale = Vector2(0.871257, 0.874833)
+texture = ExtResource("1_dsyo6")
+
+[node name="Label" type="Label" parent="."]
+light_mask = 257
+layout_mode = 0
+offset_left = 384.0
+offset_top = 576.0
+offset_right = 768.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_2r52g")
+theme_override_font_sizes/font_size = 0
+text = "Press \"Space\" to go back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 56.0
+offset_right = 480.0
+offset_bottom = 494.0
+theme_override_fonts/mono_font = ExtResource("2_2r52g")
+theme_override_fonts/italics_font = ExtResource("2_2r52g")
+theme_override_fonts/bold_italics_font = ExtResource("2_2r52g")
+theme_override_fonts/bold_font = ExtResource("2_2r52g")
+theme_override_font_sizes/bold_italics_font_size = 0
+theme_override_font_sizes/italics_font_size = 0
+theme_override_font_sizes/mono_font_size = 0
+theme_override_font_sizes/normal_font_size = 0
+theme_override_font_sizes/bold_font_size = 0
+text = "Single Mode:
+
+
+- Survive as long as you can to score points.
+
+
+- Use the arrow keys to move your player:
+
+
+Controls:
+
+
+- Up Arrow: Move Up
+
+- Down Arrow: Move Down
+
+- Left Arrow: Move Left
+
+- Right Arrow: Move Right"
+tab_size = 8
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 56.0
+offset_right = 1112.0
+offset_bottom = 553.0
+text = "Versus Mode:
+
+Survive longer than your opponent to win !
+
+Controls:
+
+Use the arrow keys for Player 1 and WASD keys for Player 2:
+
+Player 2 (WASD):
+
+W: Move Up
+A: Move Right
+S: Move Down
+D: Move Left"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 16.0
+offset_right = 640.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_2r52g")
+text = "Settings"

@@ -1,0 +1,155 @@
+[gd_scene load_steps=17 format=3 uid="uid://kw8biqlwnoh8"]
+
+[ext_resource type="Script" path="res://Main/Title Screen/mode_selection.gd" id="1_u4gls"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="2_q4a18"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="3_6cvvf"]
+[ext_resource type="Texture2D" uid="uid://db6fmtyjtf3lg" path="res://Main/Assets/keyframes/__rocket_yellow_flame_orange_red_004.png" id="4_4ofvu"]
+[ext_resource type="Texture2D" uid="uid://bs8o6qkiki73k" path="res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png" id="5_cvno0"]
+[ext_resource type="Texture2D" uid="uid://dr37jd0p0fmtq" path="res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png" id="6_10c8r"]
+[ext_resource type="Texture2D" uid="uid://bg4315okotaa7" path="res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png" id="7_js3md"]
+[ext_resource type="Texture2D" uid="uid://cg2djluyh08nw" path="res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png" id="8_kwrv6"]
+[ext_resource type="Texture2D" uid="uid://cu223243natoa" path="res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png" id="9_e1fao"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ie7e"]
+font_size = 28
+shadow_size = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05dyt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx23n"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kxlj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l8pf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx5vh"]
+
+[sub_resource type="Theme" id="Theme_s61kv"]
+
+[node name="ModeSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4gls")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 805.0
+offset_bottom = 510.0
+texture = ExtResource("2_q4a18")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 320.0
+offset_top = 86.0
+offset_right = 504.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_font_sizes/font_size = 15
+text = "Rocket
+Rush"
+label_settings = SubResource("LabelSettings_5ie7e")
+horizontal_alignment = 1
+
+[node name="RocketYellowFlameOrangeRed004" type="Sprite2D" parent="."]
+position = Vector2(169, 357)
+rotation = -0.598648
+scale = Vector2(0.128929, 0.0952309)
+texture = ExtResource("4_4ofvu")
+
+[node name="SmallAsteroidMystery11" type="Sprite2D" parent="."]
+position = Vector2(71, 58)
+scale = Vector2(0.293779, 0.272613)
+texture = ExtResource("5_cvno0")
+
+[node name="SmallAsteroidRocky2" type="Sprite2D" parent="."]
+position = Vector2(647, 79)
+scale = Vector2(0.275148, 0.323864)
+texture = ExtResource("6_10c8r")
+
+[node name="SmallAsteroidCrystalline2" type="Sprite2D" parent="."]
+position = Vector2(608, 288)
+scale = Vector2(0.387417, 0.320513)
+texture = ExtResource("7_js3md")
+
+[node name="SmallAsteroidRocky3" type="Sprite2D" parent="."]
+position = Vector2(716, 440)
+scale = Vector2(0.215232, 0.230263)
+texture = ExtResource("8_kwrv6")
+
+[node name="SmallAsteroidOther4" type="Sprite2D" parent="."]
+position = Vector2(219, 141)
+scale = Vector2(0.24435, 0.185841)
+texture = ExtResource("9_e1fao")
+
+[node name="Single" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 288.0
+offset_top = 225.0
+offset_right = 527.0
+offset_bottom = 249.0
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_05dyt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rx23n")
+text = "Single Player"
+icon = SubResource("ViewportTexture_kxlj1")
+flat = true
+text_overrun_behavior = 1
+
+[node name="BackToMenu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 289.0
+offset_top = 321.0
+offset_right = 528.0
+offset_bottom = 345.0
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_font_sizes/font_size = 0
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7l8pf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yx5vh")
+text = "Back To Menu"
+flat = true
+
+[node name="VersusMode" type="Button" parent="."]
+layout_mode = 2
+offset_left = 278.0
+offset_top = 273.0
+offset_right = 517.0
+offset_bottom = 297.0
+theme = SubResource("Theme_s61kv")
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6cvvf")
+text = " Versus Mode"
+flat = true
+
+[connection signal="pressed" from="Single" to="." method="_on_single_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="VersusMode" to="." method="_on_versus_mode_pressed"]
