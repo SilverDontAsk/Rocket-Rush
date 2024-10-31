@@ -1,0 +1,12 @@
+res://Main/Single Mode/Scenes/asteroid.tscn::a7540b459ffb2125787295cb4fb8b8dd::1730417576::res://.godot/exported/133200997/export-721283fb97582f53ca2d2528cb89c0c5-asteroid.scn
+res://Main/Single Mode/Scenes/asteroids_2.tscn::ac64c9a8fa20f4d18d7a33bf24d2f6ab::1730417576::res://.godot/exported/133200997/export-3413fd5d7209bb979ab3e6843eb02429-asteroids_2.scn
+res://Main/Single Mode/Scenes/enemyship.tscn::f3e2f23ed2b4577b01ebf1cbcddd7fba::1730417576::res://.godot/exported/133200997/export-de7ed56f4317d182e3c61abb9eea5485-enemyship.scn
+res://Main/Single Mode/Scenes/enemyship_2.tscn::191084c7e4045c4b73b09ce5b5ddb632::1730417576::res://.godot/exported/133200997/export-14cebf90868d740904a48f4781cacd09-enemyship_2.scn
+res://Main/Single Mode/Scenes/GameOver.tscn::fbc9d786285f7aaead1a4d50e624bfd4::1730396540::res://.godot/exported/133200997/export-16ba9c9468aaaa0c666a59b5358d5a5f-GameOver.scn
+res://Main/Single Mode/Scenes/main.tscn::606c605ba5cb8054362a06b18045edb0::1730417576::res://.godot/exported/133200997/export-422ade7adbd8de334b6abac38b2c82ef-main.scn
+res://Main/Single Mode/Scenes/Player.tscn::d61c099e9da2fc0e37cbfbed75ed20b7::1730417576::res://.godot/exported/133200997/export-c55a95ea5e9b660c49d9c26e21c76aa0-Player.scn
+res://Main/Title Screen/ModeSelection.tscn::89ac2ce9ba617c59d542ae54260df973::1730399382::res://.godot/exported/133200997/export-1c4e2773f5f027358a7debe84ba06507-ModeSelection.scn
+res://Main/Title Screen/settings.tscn::bfbd48f83fdb48a9b32be3e38d4ecbcc::1730155250::res://.godot/exported/133200997/export-a5422a26f822acb5873f9fcc774f3190-settings.scn
+res://Main/Title Screen/TitleScreen.tscn::33a851e1b31b733b48cf74241fc4f40a::1730396540::res://.godot/exported/133200997/export-fc92a7823a77f9b96815e46d5fb3e50c-TitleScreen.scn
+res://Main/Versus Mode/Player2.tscn::c0e5a83df13612cb9220a45b255ff911::1730417576::res://.godot/exported/133200997/export-0dae33a017ca688e35c2e7b72f1d333c-Player2.scn
+res://Main/Versus Mode/versus.tscn::be0e85964c45af221c740bcb06548fcf::1730417576::res://.godot/exported/133200997/export-d3e13ac10fb2718766f178f87f05beff-versus.scn

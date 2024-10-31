@@ -1,49 +1,19 @@
-extends Node2D
-
-var pre_enemyShip = preload("res://Main/Single Mode/Scenes/enemyship.tscn")
-var pre_asteroid = preload("res://Main/Single Mode/Scenes/asteroid.tscn")
-var pre_asteroid2 = preload("res://Main/Single Mode/Scenes/asteroids_2.tscn")
-var pre_enemyShip2 = preload("res://Main/Single Mode/Scenes/enemyship_2.tscn")
+extends Node
+@export var mob_scene: Array[PackedScene]
 var player_speed = 350
 var enemy_speed = 500
 var time_accumulated = 0.0
 var speed_increase_timer = 0.0
+var speed_increase_interval = 60.0
 
 func _ready():
-	pass
-
-func _on_timer_timeout():
-	randomize()
-	var randomEnemy = round(randf_range(1.0, 4.0))
-
-	if randomEnemy == 1:
-		var enemyShip = pre_enemyShip.instantiate()
-		self.call_deferred("add_child", enemyShip)
-		enemyShip.position.x = round(randf_range(0.0, 1000.0))
-		enemyShip.add_to_group("enemy")
-		
-	elif randomEnemy == 2:
-		var asteroid = pre_asteroid.instantiate()
-		self.call_deferred("add_child", asteroid)
-		asteroid.position.x = round(randf_range(0.0, 1000.0))
-		asteroid.add_to_group("enemy")
-		
-	elif randomEnemy == 3:
-		var asteroid2 = pre_asteroid2.instantiate()
-		self.call_deferred("add_child", asteroid2)
-		asteroid2.position.x = round(randf_range(0.0, 1000.0))
-		asteroid2.add_to_group("enemy")
-		
-	elif  randomEnemy == 4:
-		var enemyShip2 = pre_enemyShip2.instantiate()
-		self.call_deferred("add_child", enemyShip2)
-		enemyShip2.position.x = round(randf_range(0.0, 1000.0))
-		enemyShip2.add_to_group("enemy")
+	new_game()
 
 func _physics_process(delta):
 	speed_increase_timer += delta
-	if speed_increase_timer >= 15.0:
+	if speed_increase_timer >= speed_increase_interval:
 		enemy_speed = min(enemy_speed + 50, 1000)
+		player_speed = min(player_speed + 25, 700)
 		speed_increase_timer = 0.0
 
 	# Actualiza puntos cada segundo
@@ -54,22 +24,42 @@ func _physics_process(delta):
 	
 	# Actualiza el HUD con puntos y daño
 	$HUD/PuntosCantidad.text = str(GlobalScript.points)
-	$HUD/DamageCantidad.text = str(GlobalScript.Damage)
-
-# Detectar colisiones con naves enemigas o asteroides
-func _on_Area2D_area_entered(area: Area2D):
-	if area.is_in_group("enemy"):
-		print("Choque con enemigo")
-		GlobalScript.Damage += 25
-		area.queue_free()
+	
+func spawn_enemy():
+	var random_index = randi() % mob_scene.size()
+	var selected_scene = mob_scene[random_index]
+	
+	if selected_scene:
+		var obs_instance = selected_scene.instantiate()
+		add_child(obs_instance)
+		
+		var screen_size = get_viewport().get_visible_rect().size
+		var spawn_edge = randi() % 3
+		
+		match spawn_edge:
+			0:
+				obs_instance.position = Vector2(randf_range(0, screen_size.x), -10)
+				obs_instance.rotation = PI / 2
+			1:
+				obs_instance.position = Vector2(-10, randf_range(0, screen_size.y))
+				obs_instance.rotation = 0
+			2:
+				obs_instance.position = Vector2(screen_size.x + 10, randf_range(0, screen_size.y))
+				obs_instance.rotation = PI
+		obs_instance.rotation += randf_range(-PI / 8, PI / 8)
+		var direction = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
+		obs_instance.rotation = direction.angle()
+		if obs_instance.has_method("set_linear_velocity"):
+			var velocity = Vector2(enemy_speed, 0).rotated(obs_instance.rotation)
+			obs_instance.set_linear_velocity(velocity)
 
 func reset_game():
 	GlobalScript.points = 0
-	GlobalScript.Damage = 0
-	
 func game_over():
 	var current_score = GlobalScript.points
 	if current_score > GlobalScript.highscore:
 		GlobalScript.highscore = current_score
 		GlobalScript.save_highscore()
 	get_tree().change_scene_to_file("res://Main/Single Mode/Scenes/GameOver.tscn")
+func new_game():
+	$Player.start($PlayerSpawn.position)

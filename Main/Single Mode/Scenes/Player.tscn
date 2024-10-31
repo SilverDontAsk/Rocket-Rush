@@ -1,36 +1,71 @@
-[gd_scene load_steps=5 format=3 uid="uid://577vsua6whux"]
+[gd_scene load_steps=14 format=3 uid="uid://577vsua6whux"]
 
 [ext_resource type="Script" path="res://Main/Single Mode/Scripts/player.gd" id="1_ld8ib"]
-[ext_resource type="Texture2D" uid="uid://cvge0qjllpi55" path="res://Main/Assets/Spriter_file_PNG_parts/rockets/white_purple.png" id="2_sxh5v"]
+[ext_resource type="Texture2D" uid="uid://mclporbvcrgm" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_000.png" id="2_5tuoa"]
+[ext_resource type="Texture2D" uid="uid://l33dl86f4jff" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_001.png" id="3_ew3pe"]
+[ext_resource type="Texture2D" uid="uid://bv4m4s6vd71rj" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_002.png" id="4_5ewrs"]
+[ext_resource type="Texture2D" uid="uid://3080r880d4r0" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_003.png" id="5_ni2pl"]
+[ext_resource type="Texture2D" uid="uid://o2eifqryybc1" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_004.png" id="6_dvxfb"]
+[ext_resource type="Texture2D" uid="uid://bu4jrohyfafrw" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_005.png" id="7_ns8m0"]
+[ext_resource type="Texture2D" uid="uid://yeumswx7cbd6" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_006.png" id="8_vfs0f"]
+[ext_resource type="Texture2D" uid="uid://cylq8yv5pmeys" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_007.png" id="9_a3nmo"]
+[ext_resource type="Texture2D" uid="uid://binblnq6tyxd0" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_008.png" id="10_vej2u"]
+[ext_resource type="Texture2D" uid="uid://sy7iisn5cn4x" path="res://Main/Assets/keyframes/__rocket_blue_flame_purple_white_009.png" id="11_0jirp"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu1kc"]
-radius = 33.3367
-height = 95.1679
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2xow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5tuoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ew3pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5ewrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ni2pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dvxfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ns8m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vfs0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a3nmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vej2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0jirp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sjudi"]
-radius = 3.2
-height = 10.4
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8c6r2"]
+radius = 14.0
+height = 42.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="Area2D"]
 script = ExtResource("1_ld8ib")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["player"]]
-texture_filter = 1
-position = Vector2(-0.249995, -15.5)
-scale = Vector2(0.0491698, 0.0480065)
-texture = ExtResource("2_sxh5v")
-
-[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["player"]]
-scale = Vector2(10, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(1.4867, 6.31168)
-scale = Vector2(0.951397, 1.19436)
-shape = SubResource("CapsuleShape2D_wu1kc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7.15256e-07)
+scale = Vector2(0.122047, 0.0998129)
+sprite_frames = SubResource("SpriteFrames_q2xow")
+frame = 7
+frame_progress = 0.853231
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.71051e-20, -12)
-scale = Vector2(5, 5)
-shape = SubResource("CapsuleShape2D_sjudi")
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_8c6r2")
 
-[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

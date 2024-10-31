@@ -1,36 +1,42 @@
-extends CharacterBody2D
+extends Area2D
+signal hit
 
-@onready var main_script = get_parent()
+@export var speed = 400
+var screen_size
 
-var damage_cooldown = 0.5 # this is in seconds
-var time_since_dmg = 0.0
+func _ready():
+	screen_size = get_viewport_rect().size
 
-func _physics_process(delta):
-	# Movement logic
-	time_since_dmg += delta
+func _process(delta):
+	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("Right"):
-		self.velocity.x = get_parent().player_speed
+		velocity.x += 1
 	elif Input.is_action_pressed("Left"):
-		self.velocity.x = -get_parent().player_speed
-	else:
-		self.velocity.x = 0.0
-
+		velocity.x -= 1
 	if Input.is_action_pressed("Down"):
-		self.velocity.y = get_parent().player_speed
+		velocity.y += 1
 	elif Input.is_action_pressed("Up"):
-		self.velocity.y = -get_parent().player_speed
-	else:
-		self.velocity.y = 0.0
-
-	move_and_slide()
-
-	velocity.x = lerp(velocity.x, 0.0, 0.1)
-	velocity.y = lerp(velocity.y, 0.0, 0.1)
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy"):
-		GlobalScript.Damage2 += 25  # Aumentar el daño del jugador 2
-		time_since_dmg = 0.0
+		velocity.y -= 1
+	
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
 		
-		if GlobalScript.Damage2 >= 100 or GlobalScript.Damage >= 100:
-			main_script.game_over()
+	position += velocity * delta
+	position = position.clamp(Vector2.ZERO, screen_size)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+
+func blow_up():
+	hide()
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	hide()
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)

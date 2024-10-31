@@ -1,66 +1,74 @@
-[gd_scene load_steps=6 format=3 uid="uid://btlucany8pck7"]
+[gd_scene load_steps=13 format=3 uid="uid://btlucany8pck7"]
 
-[ext_resource type="Texture2D" uid="uid://bk1vp3nbfkt8w" path="res://Main/Assets/Spriter_file_PNG_parts/rockets/turqoise_yellow.png" id="1_1h0yi"]
-
-[sub_resource type="Animation" id="Animation_i6bj2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-79.0001, 564)]
-}
-
-[sub_resource type="Animation" id="Animation_lophj"]
-resource_name = "new_animation"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(875.9, 141.267), Vector2(-79.0001, 564)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqiyn"]
-_data = {
-"RESET": SubResource("Animation_i6bj2"),
-"new_animation": SubResource("Animation_lophj")
-}
+[ext_resource type="Script" path="res://Main/Single Mode/Scenes/enemyship_2.gd" id="1_kx4eh"]
+[ext_resource type="Texture2D" uid="uid://ds6b2w23b6k5w" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_001.png" id="2_tw2ij"]
+[ext_resource type="Texture2D" uid="uid://cehtow2j5wg8l" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_002.png" id="3_xtyfm"]
+[ext_resource type="Texture2D" uid="uid://bve4ech0ecm7x" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_003.png" id="4_14ctu"]
+[ext_resource type="Texture2D" uid="uid://bkg7nxjgpwra1" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_004.png" id="5_0iryy"]
+[ext_resource type="Texture2D" uid="uid://dcwil4fg3q8ia" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_005.png" id="6_5x5wq"]
+[ext_resource type="Texture2D" uid="uid://bgbyt7axl7nax" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_006.png" id="7_0wlny"]
+[ext_resource type="Texture2D" uid="uid://jft7qlvauxxb" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_009.png" id="8_syvx3"]
+[ext_resource type="Texture2D" uid="uid://dve8hcrw8jjty" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_008.png" id="9_86f5u"]
+[ext_resource type="Texture2D" uid="uid://de7wia5kdx0v7" path="res://Main/Assets/keyframes/__rocket_yellow_flame_yellow_blue_007.png" id="10_r6qnp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b08i"]
 radius = 12.1846
 height = 46.1182
 
-[node name="enemyship2" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp7q2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tw2ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xtyfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_14ctu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0iryy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5x5wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0wlny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_syvx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_86f5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r6qnp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-79.0001, 564)
+[node name="enemyship2" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_kx4eh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.432842, 0.610344)
 rotation = -1.95826
-scale = Vector2(0.0559007, 0.0504249)
-texture = ExtResource("1_1h0yi")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_xqiyn")
-}
-autoplay = "new_animation"
-
-[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["enemy"]]
-position = Vector2(-23.4249, 29.9786)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(9.93303, 73.1547)
-scale = Vector2(25, 25)
+scale = Vector2(1.39752, 1.26062)
 shape = SubResource("CapsuleShape2D_5b08i")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10.3331, -5.12267)
+rotation = -1.98992
+scale = Vector2(0.132861, 0.0995592)
+sprite_frames = SubResource("SpriteFrames_lp7q2")
+frame = 7
+frame_progress = 0.486314
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
