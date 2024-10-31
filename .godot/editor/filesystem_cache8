@@ -1,7 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1730224236
-::res://Main/::1730147101
-globalScript.gd::GDScript::-1::1730147101::0::1::::<>Node<>::
+::res://::1730386802
+client.gd::GDScript::-1::1730318461::0::1::::<>Node<>::
+client.tscn::PackedScene::6877018408207515348::1730320822::0::1::::<><>::res://client.gd
+README.md::TextFile::-1::1730229295::0::1::::<><>::
+server.gd::GDScript::-1::1730318395::0::1::::<>Node<>::
+server.tscn::PackedScene::3607256121869707942::1730320822::0::1::::<><>::res://server.gd
+::res://Main/::1730320512
+globalScript.gd::GDScript::-1::1730320512::0::1::::<>Node<>::
 ::res://Main/Assets/::1730147963
 Background_space_original.png::CompressedTexture2D::8512582447734576470::1730147099::1730147961::1::::<><>::
 Captura de pantalla 2024-10-11 213545.png::CompressedTexture2D::3538735994831495086::1730147099::1730147961::1::::<><>::
@@ -535,27 +540,35 @@ red_blue.png::CompressedTexture2D::3354845815815044006::1730147101::1730147961::
 turqoise_yellow.png::CompressedTexture2D::3143286276224442948::1730147101::1730147961::1::::<><>::
 white_purple.png::CompressedTexture2D::6259481717919860354::1730147101::1730147961::1::::<><>::
 ::res://Main/Single Mode/::1730147101
-::res://Main/Single Mode/Scenes/::1730155351
+::res://Main/Single Mode/Scenes/::1730320822
 asteroid.tscn::PackedScene::5272763287138921315::1730147955::0::1::::<><>::uid://ce0njkgfqegkf::::res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_6.png
 asteroids_2.tscn::PackedScene::8844395640657365294::1730147955::0::1::::<><>::uid://cqqwi8mao3vih::::res://Main/Assets/Asteroids/Sylized/Small_Asteroid_Sylized_Orange_11.png
 enemyship.tscn::PackedScene::8689054107465672624::1730147955::0::1::::<><>::uid://bn2d25op8t3ug::::res://Main/Assets/Spriter_file_PNG_parts/rockets/red_blue.png
 enemyship_2.tscn::PackedScene::3743934800771111876::1730147955::0::1::::<><>::uid://bk1vp3nbfkt8w::::res://Main/Assets/Spriter_file_PNG_parts/rockets/turqoise_yellow.png
-GameOver.tscn::PackedScene::4732893977822306040::1730155307::0::1::::<><>::res://Main/Single Mode/Scripts/game_over.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://bs8o6qkiki73k::::res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png<>uid://dr37jd0p0fmtq::::res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png<>uid://bg4315okotaa7::::res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png<>uid://cg2djluyh08nw::::res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png<>uid://cu223243natoa::::res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png
-main.tscn::PackedScene::6935427194131825814::1730155351::0::1::::<><>::uid://577vsua6whux::::res://Main/Single Mode/Scenes/Player.tscn<>res://Main/Single Mode/Scripts/main.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://dv2bpmef5bils::::res://Main/Single Mode/Scenes/enemyship.tscn<>uid://chefv18bcq2st::::res://Main/Single Mode/Scenes/asteroid.tscn<>uid://dyaj50btqaxyc::::res://Main/Single Mode/Scenes/asteroids_2.tscn<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://btlucany8pck7::::res://Main/Single Mode/Scenes/enemyship_2.tscn
+GameOver.tscn::PackedScene::4732893977822306040::1730320822::0::1::::<><>::res://Main/Single Mode/Scripts/game_over.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://bs8o6qkiki73k::::res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png<>uid://dr37jd0p0fmtq::::res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png<>uid://bg4315okotaa7::::res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png<>uid://cg2djluyh08nw::::res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png<>uid://cu223243natoa::::res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png
+main.tscn::PackedScene::6935427194131825814::1730320822::0::1::::<><>::uid://577vsua6whux::::res://Main/Single Mode/Scenes/Player.tscn<>res://Main/Single Mode/Scripts/main.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://dv2bpmef5bils::::res://Main/Single Mode/Scenes/enemyship.tscn<>uid://chefv18bcq2st::::res://Main/Single Mode/Scenes/asteroid.tscn<>uid://dyaj50btqaxyc::::res://Main/Single Mode/Scenes/asteroids_2.tscn<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://btlucany8pck7::::res://Main/Single Mode/Scenes/enemyship_2.tscn
 Player.tscn::PackedScene::2173706819070104827::1730155250::0::1::::<><>::res://Main/Single Mode/Scripts/player.gd<>uid://cvge0qjllpi55::::res://Main/Assets/Spriter_file_PNG_parts/rockets/white_purple.png
 ::res://Main/Single Mode/Scripts/::1730147101
 game_over.gd::GDScript::-1::1730147101::0::1::::<>Control<>::
 main.gd::GDScript::-1::1730147101::0::1::::<>Node2D<>::
 player.gd::GDScript::-1::1730147101::0::1::::<>CharacterBody2D<>::
-::res://Main/Title Screen/::1730155307
+::res://Main/Title Screen/::1730320822
 ModeSelection.tscn::PackedScene::749310638958225391::1730147955::0::1::::<><>::res://Main/Title Screen/mode_selection.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://db6fmtyjtf3lg::::res://Main/Assets/keyframes/__rocket_yellow_flame_orange_red_004.png<>uid://bs8o6qkiki73k::::res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png<>uid://dr37jd0p0fmtq::::res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png<>uid://bg4315okotaa7::::res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png<>uid://cg2djluyh08nw::::res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png<>uid://cu223243natoa::::res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png
 mode_selection.gd::GDScript::-1::1730147101::0::1::::<>Node<>::
 settings.gd::GDScript::-1::1730147101::0::1::::<>Control<>::
 settings.tscn::PackedScene::1423739488854126591::1730155250::0::1::::<><>::res://Main/Title Screen/settings.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf
-TitleScreen.tscn::PackedScene::6377920425950692345::1730155307::0::1::::<><>::uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>res://Main/Title Screen/title_screen.gd<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://db6fmtyjtf3lg::::res://Main/Assets/keyframes/__rocket_yellow_flame_orange_red_004.png<>uid://bs8o6qkiki73k::::res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png<>uid://dr37jd0p0fmtq::::res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png<>uid://bg4315okotaa7::::res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png<>uid://cg2djluyh08nw::::res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png<>uid://cu223243natoa::::res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png
+TitleScreen.tscn::PackedScene::6377920425950692345::1730320822::0::1::::<><>::uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>res://Main/Title Screen/title_screen.gd<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf<>uid://db6fmtyjtf3lg::::res://Main/Assets/keyframes/__rocket_yellow_flame_orange_red_004.png<>uid://bs8o6qkiki73k::::res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png<>uid://dr37jd0p0fmtq::::res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png<>uid://bg4315okotaa7::::res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png<>uid://cg2djluyh08nw::::res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png<>uid://cu223243natoa::::res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png
 title_screen.gd::GDScript::-1::1730147101::0::1::::<>Node<>::
-::res://Main/Versus Mode/::1730155307
-player2.gd::GDScript::-1::1730147101::0::1::::<>CharacterBody2D<>::
-Player2.tscn::PackedScene::4912211580427376721::1730155307::0::1::::<><>::res://Main/Versus Mode/player2.gd<>uid://cuue87sga73s2::::res://Main/Assets/Spriter_file_PNG_parts/rockets/orange_white.png
-versus.gd::GDScript::-1::1730147101::0::1::::<>Node2D<>::
-versus.tscn::PackedScene::6376182566316796631::1730147955::0::1::::<><>::res://Main/Versus Mode/versus.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://577vsua6whux::::res://Main/Single Mode/Scenes/Player.tscn<>uid://cb8rn3ss7mr02::::res://Main/Versus Mode/Player2.tscn<>uid://chefv18bcq2st::::res://Main/Single Mode/Scenes/asteroid.tscn<>uid://dv2bpmef5bils::::res://Main/Single Mode/Scenes/enemyship.tscn<>uid://dyaj50btqaxyc::::res://Main/Single Mode/Scenes/asteroids_2.tscn<>uid://btlucany8pck7::::res://Main/Single Mode/Scenes/enemyship_2.tscn<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf
+::res://Main/Versus Mode/::1730320822
+player2.gd::GDScript::-1::1730320655::0::1::::<>CharacterBody2D<>::
+Player2.tscn::PackedScene::4912211580427376721::1730320822::0::1::::<><>::res://Main/Versus Mode/player2.gd<>uid://cuue87sga73s2::::res://Main/Assets/Spriter_file_PNG_parts/rockets/orange_white.png
+versus.gd::GDScript::-1::1730319691::0::1::::<>Node2D<>::
+versus.tscn::PackedScene::6376182566316796631::1730320822::0::1::::<><>::res://Main/Versus Mode/versus.gd<>uid://bpgeis3b7hgg4::::res://Main/Assets/fondo espacial.png<>uid://577vsua6whux::::res://Main/Single Mode/Scenes/Player.tscn<>uid://cb8rn3ss7mr02::::res://Main/Versus Mode/Player2.tscn<>uid://chefv18bcq2st::::res://Main/Single Mode/Scenes/asteroid.tscn<>uid://dv2bpmef5bils::::res://Main/Single Mode/Scenes/enemyship.tscn<>uid://dyaj50btqaxyc::::res://Main/Single Mode/Scenes/asteroids_2.tscn<>uid://btlucany8pck7::::res://Main/Single Mode/Scenes/enemyship_2.tscn<>uid://c6iq4etgeu2o2::::res://Main/Assets/PressStart2P-Regular.ttf
+::res://MVP/::1730314465
+Challenges.txt::TextFile::-1::1730229295::0::1::::<><>::
+Progress.txt::TextFile::-1::1730229295::0::1::::<><>::
+::res://MVP/GameImages/::1730229686
+GameOverScreen.png::CompressedTexture2D::8080529493216790567::1730229295::1730229686::1::::<><>::
+GamePreview.png::CompressedTexture2D::2048664859246820145::1730229295::1730229686::1::::<><>::
+Settings.png::CompressedTexture2D::7476976025805217677::1730229295::1730229686::1::::<><>::
+Titlescreen.png::CompressedTexture2D::5957640638287613400::1730229295::1730229686::1::::<><>::

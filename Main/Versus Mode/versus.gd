@@ -1,10 +1,10 @@
 extends Node2D
 
-var pre_enemyShip = preload("res://Scenes/enemyship.tscn")
-var pre_asteroid = preload("res://Scenes/asteroid.tscn")
-var pre_asteroid2 = preload("res://Scenes/asteroids_2.tscn")
-var pre_enemyShip2 = preload("res://Scenes/enemyship_2.tscn")
-var pre_player = preload("res://Scenes/Player.tscn")  # Asegúrate de que la ruta sea correcta
+var pre_enemyShip = preload("res://Main/Single Mode/Scenes/enemyship.tscn")
+var pre_asteroid = preload("res://Main/Single Mode/Scenes/asteroid.tscn")
+var pre_asteroid2 = preload("res://Main/Single Mode/Scenes/asteroids_2.tscn")
+var pre_enemyShip2 = preload("res://Main/Single Mode/Scenes/enemyship_2.tscn")
+var pre_player = preload("res://Main/Versus Mode/Player2.tscn")  # Asegúrate de que la ruta sea correcta
 var time_accumulated = 0.0  # Variable para rastrear el tiempo transcurrido
 var time_alive = 0.0  # Rastrear el tiempo de vida
 var player_speed = 350
@@ -56,24 +56,18 @@ func _physics_process(delta):
 	
 	# Actualiza el HUD con puntos y daño
 	$HUD/PuntosCantidad.text = str(GlobalScript.points)
-	$HUD/DamageCantidad.text = str(GlobalScript.Damage)
-
-# Detectar colisiones con naves enemigas o asteroides
-func _on_Area2D_area_entered(area: Area2D):
-	if area.is_in_group("enemy"):
-		print("Choque con enemigo")
-		GlobalScript.Damage1 += 25
-		area.queue_free()
-		
-	# Si el daño llega a 100, el jugador pierde
-	if GlobalScript.Damage1 >= 100:
-		var current_score = GlobalScript.points
-		if current_score > GlobalScript.highscore:
-			GlobalScript.highscore = current_score
-			GlobalScript.save_highscore()  # Guardar el nuevo highscore
-
-		get_tree().change_scene_to_file("res://Titlescreen/GameOver.tscn")
+	$HUD/DamageCantidad.text = str(GlobalScript.Damage2)
+	
+	$HUD2/PuntosCantidad.text = str(GlobalScript.points)
+	$HUD2/DamageCantidad.text = str(GlobalScript.Damage)
 
 func reset_game():
 	GlobalScript.points = 0
 	GlobalScript.Damage = 0
+	
+func game_over():
+	var current_score = GlobalScript.points
+	if current_score > GlobalScript.highscore:
+		GlobalScript.highscore = current_score
+		GlobalScript.save_highscore()
+	get_tree().change_scene_to_file("res://Main/Single Mode/Scenes/GameOver.tscn")

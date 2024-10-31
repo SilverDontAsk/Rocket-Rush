@@ -19,25 +19,25 @@ func _on_timer_timeout():
 	if randomEnemy == 1:
 		var enemyShip = pre_enemyShip.instantiate()
 		self.call_deferred("add_child", enemyShip)
-		enemyShip.position.x = round(randf_range(0.0, 500.0))
+		enemyShip.position.x = round(randf_range(0.0, 1000.0))
 		enemyShip.add_to_group("enemy")
 		
 	elif randomEnemy == 2:
 		var asteroid = pre_asteroid.instantiate()
 		self.call_deferred("add_child", asteroid)
-		asteroid.position.x = round(randf_range(0.0, 500.0))
+		asteroid.position.x = round(randf_range(0.0, 1000.0))
 		asteroid.add_to_group("enemy")
 		
 	elif randomEnemy == 3:
 		var asteroid2 = pre_asteroid2.instantiate()
 		self.call_deferred("add_child", asteroid2)
-		asteroid2.position.x = round(randf_range(0.0, 500.0))
+		asteroid2.position.x = round(randf_range(0.0, 1000.0))
 		asteroid2.add_to_group("enemy")
 		
 	elif  randomEnemy == 4:
 		var enemyShip2 = pre_enemyShip2.instantiate()
 		self.call_deferred("add_child", enemyShip2)
-		enemyShip2.position.x = round(randf_range(0.0, 500.0))
+		enemyShip2.position.x = round(randf_range(0.0, 1000.0))
 		enemyShip2.add_to_group("enemy")
 
 func _physics_process(delta):
@@ -62,16 +62,14 @@ func _on_Area2D_area_entered(area: Area2D):
 		print("Choque con enemigo")
 		GlobalScript.Damage += 25
 		area.queue_free()
-		
-	# Si el daño llega a 100, el jugador pierde
-	if GlobalScript.Damage >= 100:
-		var current_score = GlobalScript.points
-		if current_score > GlobalScript.highscore:
-			GlobalScript.highscore = current_score
-			GlobalScript.save_highscore()  # Guardar el nuevo highscore
-
-		get_tree().change_scene_to_file("res://Titlescreen/GameOver.tscn")
 
 func reset_game():
 	GlobalScript.points = 0
 	GlobalScript.Damage = 0
+	
+func game_over():
+	var current_score = GlobalScript.points
+	if current_score > GlobalScript.highscore:
+		GlobalScript.highscore = current_score
+		GlobalScript.save_highscore()
+	get_tree().change_scene_to_file("res://Main/Single Mode/Scenes/GameOver.tscn")

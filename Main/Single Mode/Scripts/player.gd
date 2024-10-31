@@ -1,17 +1,22 @@
 extends CharacterBody2D
 
-func _physics_process(_delta):
+@onready var main_script = get_parent()
+var damage_cooldown = 0.5 # this is in seconds
+var time_since_dmg = 0.0
+
+func _physics_process(delta):
 	# Movement logic
-	if Input.is_action_pressed("Right"):
+	time_since_dmg += delta
+	if Input.is_action_pressed("move_right"):
 		self.velocity.x = get_parent().player_speed  # Accessing player_speed from parent
-	elif Input.is_action_pressed("Left"):
+	elif Input.is_action_pressed("move_left"):
 		self.velocity.x = -get_parent().player_speed
 	else:
 		self.velocity.x = 0.0
 
-	if Input.is_action_pressed("Down"):
+	if Input.is_action_pressed("move_down"):
 		self.velocity.y = get_parent().player_speed
-	elif Input.is_action_pressed("Up"):
+	elif Input.is_action_pressed("move_up"):
 		self.velocity.y = -get_parent().player_speed
 	else:
 		self.velocity.y = 0.0
@@ -25,9 +30,7 @@ func _physics_process(_delta):
 func _on_area_2d_area_entered(area: Area2D):
 	if area.is_in_group("enemy"):
 		GlobalScript.Damage += 25
-		if GlobalScript.Damage >= 100:
-			var current_score = GlobalScript.points
-			if current_score > GlobalScript.highscore:
-				GlobalScript.highscore = current_score
-				GlobalScript.save_highscore()
-			get_tree().change_scene_to_file("res://Main/Single Mode/Scenes/GameOver.tscn")
+		time_since_dmg = 0.0
+		
+		if GlobalScript.Damage >= 100 or GlobalScript.Damage2 >= 100:
+			main_script.game_over()
