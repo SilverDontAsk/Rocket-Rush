@@ -1,3 +1,4 @@
+Node
 Timer
 Label
 Button
@@ -9,6 +10,5 @@ Area2D
 StaticBody2D
 PathFollow2D
 Path2D
-Node
 VisibleOnScreenNotifier2D
 AnimatedSprite2D

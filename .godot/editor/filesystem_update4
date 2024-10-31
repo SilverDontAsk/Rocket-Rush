@@ -1,4 +1,10 @@
+res://Main/Versus Mode/versus.tscn
+res://Main/Versus Mode/player2.gd
+res://Main/Single Mode/Scripts/player.gd
+res://Main/Versus Mode/versus.gd
 res://Main/Versus Mode/Player2.tscn
 res://Main/Title Screen/TitleScreen.tscn
 res://Main/Single Mode/Scenes/GameOver.tscn
 res://Main/Single Mode/Scenes/main.tscn
+res://Main/Title Screen/ModeSelection.tscn
+res://Main/Single Mode/Scripts/main.gd

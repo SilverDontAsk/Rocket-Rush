@@ -2,6 +2,7 @@ extends Node
 
 @export var points = 0         # Puntos del jugador
 @export var Damage = 0        # Daño del jugador
+@export var Damage2 = 0
 @export var highscore = 0      # Variable para almacenar el highscore
 @export var is_single_player = true  # Simplificado a un solo jugador
 

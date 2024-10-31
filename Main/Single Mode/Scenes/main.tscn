@@ -10,17 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://btlucany8pck7" path="res://Main/Single Mode/Scenes/enemyship_2.tscn" id="7_5qdnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwglt"]
-size = Vector2(0.250004, 806)
+size = Vector2(0.559678, 1385)
 
 [node name="Single" type="Node2D"]
 script = ExtResource("1_nw3jx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1160.0
-offset_bottom = 656.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1176.0
+offset_bottom = 672.0
 texture = ExtResource("2_w3388")
 expand_mode = 1
 stretch_mode = 6
@@ -34,14 +34,18 @@ autostart = true
 [node name="Asteroid" parent="Timer" groups=["enemy"] instance=ExtResource("3_6vq6u")]
 
 [node name="enemyship" parent="Timer" groups=["enemy"] instance=ExtResource("2_ysp0a")]
+position = Vector2(-56, 48)
 
 [node name="Asteroid2" parent="Timer" groups=["enemy"] instance=ExtResource("6_6vbxo")]
+position = Vector2(600, -72)
 
 [node name="enemyship2" parent="Timer" groups=["enemy"] instance=ExtResource("7_5qdnl")]
+position = Vector2(-40, -32)
 
 [node name="Limits" type="Node2D" parent="."]
 
 [node name="LeftLimit" type="StaticBody2D" parent="Limits"]
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/LeftLimit"]
 texture_filter = 1
@@ -49,6 +53,7 @@ position = Vector2(0.75, 253)
 shape = SubResource("RectangleShape2D_fwglt")
 
 [node name="RightLimit" type="StaticBody2D" parent="Limits"]
+position = Vector2(352, 72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/RightLimit"]
 texture_filter = 1
@@ -56,10 +61,11 @@ position = Vector2(799.875, 246)
 shape = SubResource("RectangleShape2D_fwglt")
 
 [node name="BottomLimit" type="StaticBody2D" parent="Limits"]
+position = Vector2(110, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/BottomLimit"]
 texture_filter = 1
-position = Vector2(403, 501)
+position = Vector2(450, 622)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_fwglt")
 
@@ -67,7 +73,7 @@ shape = SubResource("RectangleShape2D_fwglt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/UpperLimit"]
 texture_filter = 1
-position = Vector2(403, -1)
+position = Vector2(515.5, -0.282346)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_fwglt")
 
