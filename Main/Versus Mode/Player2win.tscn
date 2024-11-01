@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://cuso1jpdo81h6"]
+
+[ext_resource type="Script" path="res://Main/Versus Mode/player_2_win.gd" id="1_e2qju"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="2_ow0lq"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="3_hubcc"]
+[ext_resource type="Texture2D" uid="uid://ne3ts0fmi78l" path="res://Main/Assets/Space Game Asset_Expansion/props_galaxy_1.png" id="4_xxqnr"]
+[ext_resource type="Texture2D" uid="uid://bxbnyx3biilax" path="res://Main/Assets/Space Game Asset_Expansion/props_ufo_2.png" id="5_s0pmw"]
+[ext_resource type="Texture2D" uid="uid://bi5ioogh26y8u" path="res://Main/Assets/Space Game Asset_Expansion/props_rocks_platform_2.png" id="6_84066"]
+[ext_resource type="Texture2D" uid="uid://dkww5ge02125b" path="res://Main/Assets/keyframes/__rocket_green_flame_orange_red_009.png" id="6_qawd3"]
+[ext_resource type="Texture2D" uid="uid://bft8ffou6fvs" path="res://Main/Assets/Space Game Asset_Expansion/props_astronaunt_2.png" id="8_eq12i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykwed"]
+line_spacing = 1.0
+font = ExtResource("3_hubcc")
+font_size = 10
+
+[node name="Player2win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2qju")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 9.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ow0lq")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.0
+offset_top = 178.0
+offset_right = 41.0
+offset_bottom = 214.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_hubcc")
+theme_override_font_sizes/font_size = 35
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Space_to_return" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = 653.0
+offset_right = 13.0
+offset_bottom = 667.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_hubcc")
+theme_override_font_sizes/font_size = 5
+text = "Press \"Space\" to Return"
+label_settings = SubResource("LabelSettings_ykwed")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2win" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -230.0
+offset_top = 338.0
+offset_right = 10.0
+offset_bottom = 358.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_hubcc")
+theme_override_font_sizes/font_size = 20
+text = "Player 2 Win"
+vertical_alignment = 1
+
+[node name="SmallAsteroidMystery11" type="Sprite2D" parent="."]
+position = Vector2(177.378, 94.9474)
+scale = Vector2(0.567868, 0.427475)
+texture = ExtResource("4_xxqnr")
+
+[node name="SmallAsteroidRocky2" type="Sprite2D" parent="."]
+position = Vector2(1120.24, 114.807)
+scale = Vector2(0.418276, 0.392195)
+texture = ExtResource("5_s0pmw")
+
+[node name="SmallAsteroidCrystalline2" type="Sprite2D" parent="."]
+position = Vector2(167, 595)
+scale = Vector2(0.387417, 0.320513)
+texture = ExtResource("6_84066")
+
+[node name="Ship2" type="Sprite2D" parent="."]
+position = Vector2(637, 498)
+rotation = 0.568977
+scale = Vector2(0.174851, 0.133105)
+texture = ExtResource("6_qawd3")
+
+[node name="SmallAsteroidOther4" type="Sprite2D" parent="."]
+position = Vector2(915, 290)
+rotation = 0.837758
+scale = Vector2(0.504611, 0.549546)
+texture = ExtResource("8_eq12i")

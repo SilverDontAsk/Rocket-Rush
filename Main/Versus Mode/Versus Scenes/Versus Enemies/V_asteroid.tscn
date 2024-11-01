@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvnk3b2rcqc63"]
+
+[ext_resource type="Texture2D" uid="uid://c8fntvjf0uye2" path="res://Main/Assets/Space Game Asset_Expansion/props_meteor_3.png" id="1_10lgn"]
+
+[sub_resource type="Animation" id="Animation_bpcpp"]
+resource_name = "Animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(622, -328), Vector2(682, 906)]
+}
+
+[sub_resource type="Animation" id="Animation_hk2tq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2pl8"]
+_data = {
+"Animation": SubResource("Animation_bpcpp"),
+"RESET": SubResource("Animation_hk2tq")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aygf4"]
+radius = 56.8076
+height = 186.861
+
+[node name="Asteroid" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -50)
+rotation = 0.698132
+scale = Vector2(0.674878, 0.703614)
+texture = ExtResource("1_10lgn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_u2pl8")
+}
+autoplay = "Animation"
+
+[node name="Area2D" type="Area2D" parent="Sprite" groups=["VersusEnemy"]]
+position = Vector2(57.3772, 56.6996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2(-28.6917, -24.1238)
+rotation = -0.724312
+shape = SubResource("CapsuleShape2D_aygf4")

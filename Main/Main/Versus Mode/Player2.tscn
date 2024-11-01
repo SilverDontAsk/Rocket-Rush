@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb8rn3ss7mr02"]
+
+[ext_resource type="Script" path="res://Main/Versus Mode/player2.gd" id="1_2umu4"]
+[ext_resource type="Texture2D" uid="uid://cuue87sga73s2" path="res://Main/Assets/Spriter_file_PNG_parts/rockets/orange_white.png" id="1_blsf8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu1kc"]
+radius = 30.0
+height = 106.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sjudi"]
+radius = 2.8
+height = 10.4
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_2umu4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["player"]]
+texture_filter = 1
+position = Vector2(-1.74999, -13.1125)
+scale = Vector2(0.0453384, 0.0457486)
+texture = ExtResource("1_blsf8")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["player"]]
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-1.14441e-05, 6.77136)
+scale = Vector2(0.951397, 1.19436)
+shape = SubResource("CapsuleShape2D_wu1kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.90735e-06, -11)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_sjudi")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

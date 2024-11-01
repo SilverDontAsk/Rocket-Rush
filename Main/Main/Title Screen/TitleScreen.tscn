@@ -1,0 +1,162 @@
+[gd_scene load_steps=16 format=3 uid="uid://cw4rogy68ixwb"]
+
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="1_c5kie"]
+[ext_resource type="Script" path="res://Main/Title Screen/title_screen.gd" id="1_qvf3v"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="2_2c1j5"]
+[ext_resource type="Texture2D" uid="uid://db6fmtyjtf3lg" path="res://Main/Assets/keyframes/__rocket_yellow_flame_orange_red_004.png" id="3_wh0ai"]
+[ext_resource type="Texture2D" uid="uid://bs8o6qkiki73k" path="res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png" id="4_g8hdu"]
+[ext_resource type="Texture2D" uid="uid://dr37jd0p0fmtq" path="res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png" id="5_p1h1t"]
+[ext_resource type="Texture2D" uid="uid://bg4315okotaa7" path="res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png" id="6_plrr8"]
+[ext_resource type="Texture2D" uid="uid://cg2djluyh08nw" path="res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png" id="7_fp0gf"]
+[ext_resource type="Texture2D" uid="uid://cu223243natoa" path="res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png" id="8_vp2dg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05dyt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx23n"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kxlj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l8pf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx5vh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ie7e"]
+font_size = 40
+shadow_size = 25
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qvf3v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -1.0
+offset_right = 805.0
+offset_bottom = 507.0
+texture = ExtResource("1_c5kie")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -306.0
+offset_right = 117.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2c1j5")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxEmpty_05dyt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rx23n")
+text = "Start"
+icon = SubResource("ViewportTexture_kxlj1")
+flat = true
+text_overrun_behavior = 1
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2c1j5")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7l8pf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yx5vh")
+text = "Settings"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2c1j5")
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 91.0
+offset_right = 120.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2c1j5")
+theme_override_font_sizes/font_size = 15
+text = "Rocket
+Rush"
+label_settings = SubResource("LabelSettings_5ie7e")
+horizontal_alignment = 1
+
+[node name="RocketYellowFlameOrangeRed004" type="Sprite2D" parent="."]
+position = Vector2(169, 357)
+rotation = -0.598648
+scale = Vector2(0.128929, 0.0952309)
+texture = ExtResource("3_wh0ai")
+
+[node name="SmallAsteroidMystery11" type="Sprite2D" parent="."]
+position = Vector2(71, 58)
+scale = Vector2(0.293779, 0.272613)
+texture = ExtResource("4_g8hdu")
+
+[node name="SmallAsteroidRocky2" type="Sprite2D" parent="."]
+position = Vector2(647, 79)
+scale = Vector2(0.275148, 0.323864)
+texture = ExtResource("5_p1h1t")
+
+[node name="SmallAsteroidCrystalline2" type="Sprite2D" parent="."]
+position = Vector2(608, 288)
+scale = Vector2(0.387417, 0.320513)
+texture = ExtResource("6_plrr8")
+
+[node name="SmallAsteroidRocky3" type="Sprite2D" parent="."]
+position = Vector2(716, 440)
+scale = Vector2(0.215232, 0.230263)
+texture = ExtResource("7_fp0gf")
+
+[node name="SmallAsteroidOther4" type="Sprite2D" parent="."]
+position = Vector2(219, 141)
+scale = Vector2(0.24435, 0.185841)
+texture = ExtResource("8_vp2dg")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

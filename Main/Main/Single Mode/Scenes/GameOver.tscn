@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8owcpu4spn5q"]
+
+[ext_resource type="Script" path="res://Main/Single Mode/Scripts/game_over.gd" id="1_kqnat"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="2_64nqa"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="3_wrxk0"]
+[ext_resource type="Texture2D" uid="uid://bs8o6qkiki73k" path="res://Main/Assets/Asteroids/Mystery/Small_Asteroid_Mystery_11.png" id="5_dmlgx"]
+[ext_resource type="Texture2D" uid="uid://dr37jd0p0fmtq" path="res://Main/Assets/Asteroids/Metallic/Small_Asteroid_Rocky_2.png" id="6_7rpb7"]
+[ext_resource type="Texture2D" uid="uid://bg4315okotaa7" path="res://Main/Assets/Asteroids/Crystalline/Small_Asteroid_Crystalline_2.png" id="7_877wj"]
+[ext_resource type="Texture2D" uid="uid://cg2djluyh08nw" path="res://Main/Assets/Asteroids/Rocky/Small_Asteroid_Rocky_2.png" id="8_vcukp"]
+[ext_resource type="Texture2D" uid="uid://cu223243natoa" path="res://Main/Assets/Asteroids/Other/Small_Asteroid_Other_4.png" id="9_y8vmo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0feg3"]
+line_spacing = 1.0
+font = ExtResource("3_wrxk0")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykwed"]
+line_spacing = 1.0
+font = ExtResource("3_wrxk0")
+font_size = 10
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kqnat")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_64nqa")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 53.0
+offset_right = 25.0
+offset_bottom = 89.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_wrxk0")
+theme_override_font_sizes/font_size = 0
+text = "GAME OVER!"
+label_settings = SubResource("LabelSettings_0feg3")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Space_to_return" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -211.0
+offset_top = 392.0
+offset_right = 19.0
+offset_bottom = 406.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_wrxk0")
+theme_override_font_sizes/font_size = 5
+text = "Press \"Space\" to Return"
+label_settings = SubResource("LabelSettings_ykwed")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 195.0
+offset_right = -39.0
+offset_bottom = 212.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_wrxk0")
+theme_override_font_sizes/font_size = 5
+text = "Score:"
+label_settings = SubResource("LabelSettings_ykwed")
+vertical_alignment = 1
+
+[node name="Highscore" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 237.0
+offset_right = 14.0
+offset_bottom = 256.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_wrxk0")
+theme_override_font_sizes/font_size = 5
+text = "Highscore:"
+label_settings = SubResource("LabelSettings_ykwed")
+vertical_alignment = 1
+
+[node name="SmallAsteroidMystery11" type="Sprite2D" parent="."]
+position = Vector2(79, 54)
+scale = Vector2(0.293779, 0.272613)
+texture = ExtResource("5_dmlgx")
+
+[node name="SmallAsteroidRocky2" type="Sprite2D" parent="."]
+position = Vector2(698, 129)
+scale = Vector2(0.275148, 0.323864)
+texture = ExtResource("6_7rpb7")
+
+[node name="SmallAsteroidCrystalline2" type="Sprite2D" parent="."]
+position = Vector2(157, 248)
+scale = Vector2(0.387417, 0.320513)
+texture = ExtResource("7_877wj")
+
+[node name="SmallAsteroidRocky3" type="Sprite2D" parent="."]
+position = Vector2(723, 410)
+scale = Vector2(0.365894, 0.358552)
+texture = ExtResource("8_vcukp")
+
+[node name="SmallAsteroidOther4" type="Sprite2D" parent="."]
+position = Vector2(89, 430)
+scale = Vector2(0.466808, 0.309735)
+texture = ExtResource("9_y8vmo")

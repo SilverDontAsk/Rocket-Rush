@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=3 uid="uid://c52tqclodiy7g"]
+
+[ext_resource type="PackedScene" uid="uid://577vsua6whux" path="res://Main/Single Mode/Scenes/Player.tscn" id="1_mvtym"]
+[ext_resource type="Script" path="res://Main/Single Mode/Scripts/main.gd" id="1_nw3jx"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="2_w3388"]
+[ext_resource type="PackedScene" uid="uid://dv2bpmef5bils" path="res://Main/Single Mode/Scenes/enemyship.tscn" id="2_ysp0a"]
+[ext_resource type="PackedScene" uid="uid://chefv18bcq2st" path="res://Main/Single Mode/Scenes/asteroid.tscn" id="3_6vq6u"]
+[ext_resource type="PackedScene" uid="uid://dyaj50btqaxyc" path="res://Main/Single Mode/Scenes/asteroids_2.tscn" id="6_6vbxo"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="6_qegdj"]
+[ext_resource type="PackedScene" uid="uid://btlucany8pck7" path="res://Main/Single Mode/Scenes/enemyship_2.tscn" id="7_5qdnl"]
+[ext_resource type="PackedScene" uid="uid://dyn3gc4m1ythj" path="res://Main/Single Mode/Scenes/asteroid3.tscn" id="7_ie5k3"]
+[ext_resource type="PackedScene" uid="uid://dk114rsjuncwc" path="res://Main/Single Mode/Scenes/medicine.tscn" id="7_jub2d"]
+[ext_resource type="PackedScene" uid="uid://cp0e5j4j2e75p" path="res://Main/Single Mode/Scenes/shield.tscn" id="8_251h1"]
+[ext_resource type="PackedScene" uid="uid://bbqdksyjw2ng4" path="res://Main/Single Mode/Scenes/enemyship_3.tscn" id="8_i25o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwglt"]
+size = Vector2(2.43857, 1374)
+
+[node name="Single" type="Node2D"]
+script = ExtResource("1_nw3jx")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_mvtym")]
+position = Vector2(642, 682)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Asteroid" parent="Timer" groups=["enemy"] instance=ExtResource("3_6vq6u")]
+position = Vector2(968, -302)
+
+[node name="enemyship" parent="Timer" groups=["enemy"] instance=ExtResource("2_ysp0a")]
+
+[node name="Asteroid2" parent="Timer" groups=["enemy"] instance=ExtResource("6_6vbxo")]
+position = Vector2(-328, -128)
+
+[node name="enemyship2" parent="Timer" groups=["enemy"] instance=ExtResource("7_5qdnl")]
+position = Vector2(-48, 150)
+
+[node name="Asteroid3" parent="Timer" groups=["enemy"] instance=ExtResource("7_ie5k3")]
+position = Vector2(306, -32)
+
+[node name="enemyship3" parent="Timer" groups=["enemy"] instance=ExtResource("8_i25o5")]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="Medicine" parent="Timer2" instance=ExtResource("7_jub2d")]
+
+[node name="shield" parent="Timer2" instance=ExtResource("8_251h1")]
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="LeftLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/LeftLimit"]
+texture_filter = 1
+position = Vector2(0, 350)
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="RightLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/RightLimit"]
+texture_filter = 1
+position = Vector2(1280, 325)
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="BottomLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/BottomLimit"]
+texture_filter = 1
+position = Vector2(640, 720)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="UpperLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/UpperLimit"]
+texture_filter = 1
+position = Vector2(673, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="Puntos" type="Label" parent="HUD"]
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 143.0
+offset_bottom = 42.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qegdj")
+theme_override_font_sizes/font_size = 10
+text = "Points: "
+
+[node name="PuntosCantidad" type="Label" parent="HUD"]
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 86.0
+offset_top = 14.0
+offset_right = 191.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qegdj")
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[node name="Damage" type="Label" parent="HUD"]
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 15.0
+offset_top = 32.0
+offset_right = 143.0
+offset_bottom = 60.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qegdj")
+theme_override_font_sizes/font_size = 10
+text = "Damage:"
+
+[node name="DamageCantidad" type="Label" parent="HUD"]
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 86.0
+offset_top = 32.0
+offset_right = 110.0
+offset_bottom = 52.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qegdj")
+theme_override_font_sizes/font_size = 10
+text = "0
+"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 700)
+
+[node name="background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(638, 361)
+texture = ExtResource("2_w3388")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

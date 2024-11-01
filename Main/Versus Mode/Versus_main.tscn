@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=3 uid="uid://b38mbfbvlfpwi"]
+
+[ext_resource type="Script" path="res://Main/Versus Mode/Versus_Script/versus_main.gd" id="1_f7qne"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="1_yr15r"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="2_rcua7"]
+[ext_resource type="PackedScene" uid="uid://b1dhrn1awavs1" path="res://Main/Versus Mode/Versus Scenes/Versus Players/Versus_player1.tscn" id="4_wgcix"]
+[ext_resource type="PackedScene" uid="uid://yfosbbbv18ag" path="res://Main/Versus Mode/Versus Scenes/Versus Players/Versus_player2.tscn" id="5_sms6m"]
+[ext_resource type="PackedScene" uid="uid://bntsx2sd1l56s" path="res://Main/Versus Mode/Versus Scenes/Versus Enemies/V_ship.tscn" id="6_08p42"]
+[ext_resource type="PackedScene" uid="uid://ci1va24yyhoge" path="res://Main/Versus Mode/Versus Scenes/Versus Enemies/V_ship2.tscn" id="7_tw33u"]
+[ext_resource type="PackedScene" uid="uid://bq30ryjagahov" path="res://Main/Versus Mode/Versus Scenes/Versus Enemies/V_ship3.tscn" id="8_u3rtg"]
+[ext_resource type="PackedScene" uid="uid://cvnk3b2rcqc63" path="res://Main/Versus Mode/Versus Scenes/Versus Enemies/V_asteroid.tscn" id="9_3718i"]
+[ext_resource type="PackedScene" uid="uid://bk5bk3m5p3cc1" path="res://Main/Versus Mode/Versus Scenes/Versus Enemies/V_asteroid2.tscn" id="10_h32yx"]
+[ext_resource type="PackedScene" uid="uid://b047vcf6iu3yl" path="res://Main/Versus Mode/Versus Scenes/Versus Enemies/V_asteroid3.tscn" id="11_tu6l8"]
+[ext_resource type="PackedScene" uid="uid://bmcqcl0helgu2" path="res://Main/Versus Mode/Versus Scenes/Versus Boosts/V_shield.tscn" id="12_suk3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwglt"]
+size = Vector2(2.43857, 1374)
+
+[node name="Versus" type="Node2D"]
+script = ExtResource("1_f7qne")
+
+[node name="Versus_player1" parent="." groups=["VersusPlayers"] instance=ExtResource("4_wgcix")]
+position = Vector2(484, 687)
+
+[node name="Versus_player2" parent="." groups=["VersusPlayers"] instance=ExtResource("5_sms6m")]
+position = Vector2(803, 689)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="V_ship" parent="Timer" groups=["VersusEnemy"] instance=ExtResource("6_08p42")]
+
+[node name="V_ship2" parent="Timer" groups=["VersusEnemy"] instance=ExtResource("7_tw33u")]
+
+[node name="v_ship3" parent="Timer" groups=["VersusEnemy"] instance=ExtResource("8_u3rtg")]
+
+[node name="V_asteroid" parent="Timer" groups=["VersusEnemy"] instance=ExtResource("9_3718i")]
+
+[node name="V_asteroid2" parent="Timer" groups=["VersusEnemy"] instance=ExtResource("10_h32yx")]
+
+[node name="V_asteroid3" parent="Timer" groups=["VersusEnemy"] instance=ExtResource("11_tu6l8")]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="shield" parent="Timer2" instance=ExtResource("12_suk3b")]
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="LeftLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/LeftLimit"]
+texture_filter = 1
+position = Vector2(0, 350)
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="RightLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/RightLimit"]
+texture_filter = 1
+position = Vector2(1280, 325)
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="BottomLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/BottomLimit"]
+texture_filter = 1
+position = Vector2(640, 720)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="UpperLimit" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/UpperLimit"]
+texture_filter = 1
+position = Vector2(673, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fwglt")
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="P1Damage" type="Label" parent="HUD"]
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 36.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yr15r")
+theme_override_font_sizes/font_size = 10
+text = "P1 Damage:"
+
+[node name="D1Cantidad" type="Label" parent="HUD"]
+visible = false
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 111.0
+offset_top = 9.0
+offset_right = 216.0
+offset_bottom = 29.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yr15r")
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[node name="P2Damage" type="Label" parent="HUD"]
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 1135.0
+offset_top = 9.0
+offset_right = 1235.0
+offset_bottom = 27.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yr15r")
+theme_override_font_sizes/font_size = 10
+text = "P2 Damage:"
+
+[node name="D2Cantidad" type="Label" parent="HUD"]
+visible = false
+modulate = Color(1, 1, 1, 0.560784)
+offset_left = 1240.0
+offset_top = 10.0
+offset_right = 1264.0
+offset_bottom = 29.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yr15r")
+theme_override_font_sizes/font_size = 10
+text = "0
+"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 700)
+
+[node name="background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(649, 365)
+texture = ExtResource("2_rcua7")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
