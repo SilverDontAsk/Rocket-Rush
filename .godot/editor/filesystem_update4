@@ -9,3 +9,12 @@ res://Main/Single Mode/main.tscn
 res://Main/Versus Mode/Versus Scenes/Versus Players/Versus_player2.tscn
 res://Main/Title Screen/TitleScreen.tscn
 res://Main/Title Screen/settings.tscn
+res://Main(1)/Main/Title Screen/TitleScreen.tscn
+res://README.md
+res://TitleScreen.tscn
+res://Main/Single Mode/globalScript.gd
+res://Main/Title Screen/mode_selection.gd
+res://Main/Single Mode/Scripts/player.gd
+res://Main/Versus Mode/player_1_win.gd
+res://Main/Versus Mode/Player1win.tscn
+res://Main/Title Screen/ModeSelection.tscn
