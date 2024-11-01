@@ -1,0 +1,11 @@
+res://Main/Title Screen/ModeSelection.tscn
+res://Main/Single Mode/Scenes/Player.tscn
+res://Main/Single Mode/Scenes/medicine.tscn
+res://Main/Single Mode/Scenes/GameOver.tscn
+res://Main/Single Mode/Scenes/enemyship_3.tscn
+res://Main/Single Mode/Scenes/asteroid.tscn
+res://Main/Single Mode/Scenes/asteroids_2.tscn
+res://Main/Single Mode/Scenes/shield.tscn
+res://Main/Single Mode/main.tscn
+res://Main/Versus Mode/Versus_Script/versus_main.gd
+res://Main/Versus Mode/Versus Scenes/Versus Players/Versus_player2.tscn
