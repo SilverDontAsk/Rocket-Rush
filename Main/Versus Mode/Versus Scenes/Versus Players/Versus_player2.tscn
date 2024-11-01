@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://yfosbbbv18ag"]
+
+[ext_resource type="Script" path="res://Main/Versus Mode/Versus_Script/versus_player_2.gd" id="1_ygxf3"]
+[ext_resource type="Texture2D" uid="uid://dkww5ge02125b" path="res://Main/Assets/keyframes/__rocket_green_flame_orange_red_009.png" id="2_35lex"]
+[ext_resource type="AudioStream" uid="uid://dg5ktq55gribw" path="res://Main/Assets/Music/explosion.wav" id="3_bkokv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu1kc"]
+radius = 23.0748
+height = 65.1268
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sjudi"]
+radius = 3.6
+height = 10.8
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ygxf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["player"]]
+texture_filter = 1
+scale = Vector2(0.0792573, 0.0687491)
+texture = ExtResource("2_35lex")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" groups=["VersusPlayers"]]
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, -17.1127)
+scale = Vector2(0.951397, 1.19436)
+shape = SubResource("CapsuleShape2D_wu1kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["VersusPlayers"]]
+position = Vector2(0, -13)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_sjudi")
+
+[node name="sounds" type="Node2D" parent="."]
+position = Vector2(-1, -16)
+
+[node name="shipImpact" type="AudioStreamPlayer2D" parent="sounds"]
+position = Vector2(0, -13)
+stream = ExtResource("3_bkokv")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://b047vcf6iu3yl"]
+
+[ext_resource type="Texture2D" uid="uid://b3ul4kavonhps" path="res://Main/Assets/Space Game Asset_Expansion/props_planets_4.png" id="1_ht5n0"]
+
+[sub_resource type="Animation" id="Animation_bpcpp"]
+resource_name = "Animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(233, -55), Vector2(435, 914)]
+}
+
+[sub_resource type="Animation" id="Animation_hk2tq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2pl8"]
+_data = {
+"Animation": SubResource("Animation_bpcpp"),
+"RESET": SubResource("Animation_hk2tq")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aygf4"]
+radius = 211.397
+height = 425.055
+
+[node name="Asteroid3" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -50)
+rotation = 0.698132
+scale = Vector2(0.160359, 0.157349)
+texture = ExtResource("1_ht5n0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_u2pl8")
+}
+autoplay = "Animation"
+
+[node name="Area2D" type="Area2D" parent="Sprite" groups=["VersusEnemy"]]
+position = Vector2(57.3772, 56.6996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2(-58.2737, -46.3651)
+rotation = -0.724312
+shape = SubResource("CapsuleShape2D_aygf4")

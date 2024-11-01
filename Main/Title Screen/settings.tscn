@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=3 uid="uid://ujw1ti8rjt3d"]
+
+[ext_resource type="Script" path="res://Main/Title Screen/settings.gd" id="1_8mx2u"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Assets/fondo espacial.png" id="1_dsyo6"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="2_2r52g"]
+[ext_resource type="AudioStream" uid="uid://bkqn1guhlb7x" path="res://Main/Assets/through space.ogg" id="4_yod72"]
+[ext_resource type="Texture2D" uid="uid://bid5msx0ubrd8" path="res://Main/Assets/Space Game Asset_Expansion/props_rocket_3.png" id="5_rujku"]
+[ext_resource type="Texture2D" uid="uid://canrh1n6cypt6" path="res://Main/Assets/Space Game Asset_Expansion/props_astronaunt_3.png" id="6_c4s8m"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8mx2u")
+
+[node name="Settings" type="Sprite2D" parent="."]
+position = Vector2(642, 361)
+scale = Vector2(0.965569, 0.970706)
+texture = ExtResource("1_dsyo6")
+
+[node name="Label" type="Label" parent="."]
+light_mask = 257
+layout_mode = 0
+offset_left = 457.0
+offset_top = 688.0
+offset_right = 841.0
+offset_bottom = 712.0
+theme_override_fonts/font = ExtResource("2_2r52g")
+theme_override_font_sizes/font_size = 0
+text = "Press \"Space\" to go back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 149.0
+offset_right = 635.0
+offset_bottom = 604.0
+theme_override_fonts/normal_font = ExtResource("2_2r52g")
+theme_override_fonts/mono_font = ExtResource("2_2r52g")
+theme_override_fonts/italics_font = ExtResource("2_2r52g")
+theme_override_fonts/bold_italics_font = ExtResource("2_2r52g")
+theme_override_fonts/bold_font = ExtResource("2_2r52g")
+theme_override_font_sizes/bold_italics_font_size = 0
+theme_override_font_sizes/italics_font_size = 0
+theme_override_font_sizes/mono_font_size = 0
+theme_override_font_sizes/normal_font_size = 0
+theme_override_font_sizes/bold_font_size = 0
+text = "Single Mode:
+
+
+- Survive as long as you can to score points.
+
+
+- Use the arrow keys to move your player:
+
+
+Controls:
+
+
+- Up Arrow: Move Up
+
+- Down Arrow: Move Down
+
+- Left Arrow: Move Left
+
+- Right Arrow: Move Right"
+tab_size = 8
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 129.0
+offset_right = 1218.0
+offset_bottom = 658.0
+theme_override_fonts/normal_font = ExtResource("2_2r52g")
+theme_override_fonts/mono_font = ExtResource("2_2r52g")
+theme_override_fonts/italics_font = ExtResource("2_2r52g")
+theme_override_fonts/bold_italics_font = ExtResource("2_2r52g")
+theme_override_fonts/bold_font = ExtResource("2_2r52g")
+text = "Versus Mode:
+
+
+- Survive longer than your opponent to win !
+
+
+Controls:
+
+
+Player 1 (arrow keys):
+
+
+-Up arrow: Move up
+
+-Down arrow: Move down
+
+-Left arrow: Move left
+
+-Right arrow: Move right
+
+
+Player 2 (WASD):
+
+
+W: Move Up
+
+A: Move Right
+
+S: Move Down
+
+D: Move Left"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 35.0
+offset_right = 800.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("2_2r52g")
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+
+[node name="Music" type="Node2D" parent="."]
+
+[node name="menuMusic" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("4_yod72")
+
+[node name="Spaceship" type="Sprite2D" parent="."]
+position = Vector2(246, 599)
+scale = Vector2(0.671271, 0.530612)
+texture = ExtResource("5_rujku")
+
+[node name="Astronauta" type="Sprite2D" parent="."]
+position = Vector2(297, 626)
+rotation = 0.479966
+scale = Vector2(0.527341, 0.452702)
+texture = ExtResource("6_c4s8m")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmcqcl0helgu2"]
+
+[ext_resource type="Script" path="res://Main/Versus Mode/Versus_Script/v_shield.gd" id="1_gg328"]
+[ext_resource type="Texture2D" uid="uid://cvstsc4v8prl0" path="res://Main/Assets/Spriter_file_PNG_parts/flames/16x16 GrayHeart1.png" id="2_wcbho"]
+
+[sub_resource type="Animation" id="Animation_lhluf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 850)]
+}
+
+[sub_resource type="Animation" id="Animation_cq5mj"]
+resource_name = "medicine"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1310, -21), Vector2(0, 850)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rve6m"]
+_data = {
+"RESET": SubResource("Animation_lhluf"),
+"medicine": SubResource("Animation_cq5mj")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_82rmg"]
+radius = 7.81108
+
+[node name="V_shield" type="Node2D"]
+script = ExtResource("1_gg328")
+
+[node name="shield" type="Sprite2D" parent="."]
+position = Vector2(0, 850)
+scale = Vector2(3.9375, 3.00005)
+texture = ExtResource("2_wcbho")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="shield" groups=["VersusBoost"]]
+libraries = {
+"": SubResource("AnimationLibrary_rve6m")
+}
+autoplay = "medicine"
+
+[node name="Area2D" type="Area2D" parent="shield" groups=["VersusBoost"]]
+position = Vector2(0.126976, 0.333188)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shield/Area2D" groups=["VersusBoost"]]
+position = Vector2(-9.53674e-06, -0.666655)
+shape = SubResource("CircleShape2D_82rmg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="animation_finished" from="shield/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="shield/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

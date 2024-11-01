@@ -1,0 +1,160 @@
+[gd_scene load_steps=17 format=3 uid="uid://kw8biqlwnoh8"]
+
+[ext_resource type="Script" path="res://Main/Title Screen/mode_selection.gd" id="1_u4gls"]
+[ext_resource type="Texture2D" uid="uid://bpgeis3b7hgg4" path="res://Main/Main/Assets/fondo espacial.png" id="2_q4a18"]
+[ext_resource type="FontFile" uid="uid://c6iq4etgeu2o2" path="res://Main/Assets/PressStart2P-Regular.ttf" id="3_6cvvf"]
+[ext_resource type="Texture2D" uid="uid://db6fmtyjtf3lg" path="res://Main/Assets/keyframes/__rocket_yellow_flame_orange_red_004.png" id="4_4ofvu"]
+[ext_resource type="Texture2D" uid="uid://cdfvilfmw3i27" path="res://Main/Assets/Space Game Asset_Expansion/props_space_rocks_4.png" id="5_wd351"]
+[ext_resource type="Texture2D" uid="uid://cs0t5vmjegpu7" path="res://Main/Assets/Space Game Asset_Expansion/props_planets_3.png" id="6_rgee2"]
+[ext_resource type="Texture2D" uid="uid://cn0a5bixmw8aa" path="res://Main/Assets/Space Game Asset_Expansion/props_satellite_2.png" id="7_v71nw"]
+[ext_resource type="Texture2D" uid="uid://dtkga4xxoy6in" path="res://Main/Assets/Space Game Asset_Expansion/props_space_rocks_3.png" id="8_hcu3d"]
+[ext_resource type="Texture2D" uid="uid://dkodlxowdmd42" path="res://Main/Assets/Space Game Asset_Expansion/props_ufo_4.png" id="9_rjtfx"]
+[ext_resource type="AudioStream" uid="uid://bb4ftiea35mtb" path="res://Main/Assets/Music/through space.ogg" id="10_dk1gg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05dyt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx23n"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kxlj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l8pf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx5vh"]
+
+[sub_resource type="Theme" id="Theme_s61kv"]
+
+[node name="ModeSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4gls")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -30.0
+offset_top = -11.0
+offset_right = 1306.0
+offset_bottom = 740.0
+texture = ExtResource("2_q4a18")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 469.0
+offset_top = 132.0
+offset_right = 829.0
+offset_bottom = 255.0
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_font_sizes/font_size = 60
+text = "Rocket
+Rush"
+horizontal_alignment = 1
+
+[node name="RocketYellowFlameOrangeRed004" type="Sprite2D" parent="."]
+position = Vector2(226, 493)
+rotation = -0.359538
+scale = Vector2(0.178953, 0.128147)
+texture = ExtResource("4_4ofvu")
+
+[node name="SmallAsteroidMystery11" type="Sprite2D" parent="."]
+position = Vector2(1016.79, 565.581)
+scale = Vector2(1.3366, 0.720327)
+texture = ExtResource("5_wd351")
+
+[node name="SmallAsteroidRocky2" type="Sprite2D" parent="."]
+position = Vector2(1070, 104)
+scale = Vector2(0.350592, 0.326705)
+texture = ExtResource("6_rgee2")
+
+[node name="SmallAsteroidCrystalline2" type="Sprite2D" parent="."]
+position = Vector2(210, 132)
+rotation = -6.28319
+scale = Vector2(0.430888, 0.508471)
+texture = ExtResource("7_v71nw")
+
+[node name="SmallAsteroidRocky3" type="Sprite2D" parent="."]
+position = Vector2(1108, 617)
+scale = Vector2(0.506168, 0.477663)
+texture = ExtResource("8_hcu3d")
+
+[node name="SmallAsteroidOther4" type="Sprite2D" parent="."]
+position = Vector2(1103, 375)
+scale = Vector2(0.456113, 0.526414)
+texture = ExtResource("9_rjtfx")
+
+[node name="Single" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 406.0
+offset_top = 353.0
+offset_right = 888.0
+offset_bottom = 413.0
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxEmpty_05dyt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rx23n")
+text = "Single Player"
+icon = SubResource("ViewportTexture_kxlj1")
+flat = true
+text_overrun_behavior = 1
+
+[node name="BackToMenu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 372.0
+offset_top = 526.0
+offset_right = 920.0
+offset_bottom = 579.0
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7l8pf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yx5vh")
+text = "Back To Menu"
+flat = true
+
+[node name="VersusMode" type="Button" parent="."]
+layout_mode = 2
+offset_left = 351.0
+offset_top = 436.0
+offset_right = 899.0
+offset_bottom = 489.0
+theme = SubResource("Theme_s61kv")
+theme_override_colors/font_disabled_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.00784314, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.00784314, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_6cvvf")
+theme_override_font_sizes/font_size = 35
+text = " Versus Mode"
+flat = true
+
+[node name="Music" type="Node2D" parent="."]
+
+[node name="menuMusic" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("10_dk1gg")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="Single" to="." method="_on_single_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="VersusMode" to="." method="_on_versus_mode_pressed"]
