@@ -1,23 +1,17 @@
 # Rocket Rush
 
-## Description
+This is a simple game made by Holberton Students...
 
-Rocket Rush is an exciting action-packed game developed using the Godot Engine.
+Steven Rosario
+Mitzael Pitre
+William Pellot
 
-## Features
+# Description
 
-- **Single Mode:** 
-  - Survive against various enemies, including enemy ships and asteroids.
-  - Score points for every second you survive.
-  - Intuitive controls using the arrow keys for movement.
+The game consists of 1 or 2 players dodging asteroids and rockets while attempting to survive as long as possible in a space-themed environment. Players win by being the one to survive the longest. 
 
-- **Versus Mode:** 
-  - Compete with a friend to see who can survive longer.
-  - Similar mechanics to Single Mode, but with the added excitement of head-to-head competition.
+Our game uses the typical WASD to move but on versus mode it requires the arrow keys for second player to move. So things like 60% keyboards will not work for this game.
 
-- **Settings Menu:**
-  - Customize game settings for an optimized gameplay experience.
+# Controls
 
-- **User Interface:**
-  - Displays current score and damage.
-  - High score tracking and saving.
+Our game uses the typical WASD to move but on versus mode it requires the arrow keys for second player to move. So things like 60% keyboards will not work for this game.
