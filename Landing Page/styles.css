@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0b0c3c; /* Deep dark blue for a space effect */
+    color: #e0e5f0; /* Light blue for contrast */
+    text-align: center;
+    overflow-x: hidden;
+}
+header {
+    background-color: #151740; /* Even darker background */
+    padding: 50px 20px;
+}
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #e1dbff; /* Soft color for the text */
+}
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #d9e3ff;
+}
+.btn {
+    padding: 5px 15px;
+    background-color: #7f3dd8; /* Deep violet */
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(127, 61, 216, 0.4);
+}
+.about, .game-modes, .features {
+    background-color: #252556;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Game Features Section */
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #d9e3ff;
+}
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.feature-item {
+    background-color: #312b63; /* Deep blue/violet */
+    padding: 20px;
+    border-radius: 8px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.feature-item i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.feature-item:nth-child(1) i {
+    color: #ff8f4a; /* Bright orange */
+}
+.feature-item:nth-child(2) i {
+    color: #37ff85; /* Neon green */
+}
+.feature-item:nth-child(3) i {
+    color: #6a0dad; /* Strong purple */
+}
+.feature-item:nth-child(4) i {
+    color: #ff4dff; /* Neon pink */
+}
+.feature-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #b3b8e6;
+}
+
+/* Game Preview and Mode Images */
+.game-preview, .mode-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.mode-images img, .game-preview img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Hover Effect on Images */
+.mode-images img:hover, .game-preview img:hover {
+    transform: scale(1.4); /* Increases size by 40% */
+    transition: transform 0.3s ease;
+}
+
+/* Mode Buttons */
+.mode-btn {
+    padding: 15px 30px;
+    background-color: #7f3dd8; /* Space violet */
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0px 4px 8px rgba(127, 61, 216, 0.4);
+}
+
+/* Team Section */
+.team {
+    background-color: #181D3B;
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Initial styles of the team member box */
+.team-member {
+    position: relative;
+    width: 200px;
+    height: 50px; /* Only the name is initially displayed */
+    overflow: hidden;
+    background-color: #1E234B;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease; /* Smooth transition for the effect */
+}
+
+/* Expansion of the box on hover */
+.team-member:hover {
+    width: 300px; /* Adjust this size according to the desired space */
+    height: 250px; /* Enough to display full information */
+    z-index: 1;
+}
+
+/* Display the member's name always visible */
+.team-member h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Initially */
+.team-info {
+    display: none; /* Hidden initially */
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+/* Show the info when you make hover */
+.team-member:hover .team-info {
+    display: block; /* Displayed only on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #151740;
+    padding: 20px 0;
+}
+footer p {
+    font-size: 0.9rem;
+    color: #b9c1e0;
+}
