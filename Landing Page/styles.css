@@ -171,6 +171,18 @@ header p {
     font-size: 0.9rem;
 }
 
+.team-info a {
+    color: #7f3dd8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.team-info a:hover {
+    text-decoration: underline;
+    color: #d9e3ff;
+}
+
+
 /* Show the info when you make hover */
 .team-member:hover .team-info {
     display: block; /* Displayed only on hover */
